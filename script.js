@@ -68,7 +68,7 @@ function createStars() {
     star.style.animationDuration = `${Math.random() * 3 + 2}s`; // Speed between 2s and 5s
     star.style.animationName = animationType;
 
-    // Randomize twinkle speed for a more varied effect
+    // Randomize twinkle speed for a more varied effect (Twinkle twinkle little star I'm an ape and I am dumb!!)
     if (animationType === 'twinkle') {
       star.style.animationDuration = `${Math.random() * 1.5 + 1.5}s`; // Twinkle between 1.5s and 3s
     }
