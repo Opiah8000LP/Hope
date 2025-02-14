@@ -36,3 +36,22 @@ document.addEventListener('keydown', (e) => {
     typedCode = typedCode.slice(typedCode.length - secretCode.length);
   }
 });
+
+// Star particles generation
+const starContainer = document.createElement('div');
+starContainer.classList.add('stars');
+document.body.appendChild(starContainer);
+
+function createStars() {
+  const starCount = 100; // Number of stars
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = `${Math.random() * 100}vh`;
+    star.style.left = `${Math.random() * 100}vw`;
+    star.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random speed for each star
+    starContainer.appendChild(star);
+  }
+}
+
+createStars(); // Initialize stars on page load
