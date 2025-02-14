@@ -43,7 +43,8 @@ starContainer.classList.add('stars');
 document.body.appendChild(starContainer);
 
 function createStars() {
-  const starCount = 150; // Number of stars
+  const starCount = 300; // Number of stars
+  
   for (let i = 0; i < starCount; i++) {
     const star = document.createElement('div');
     star.classList.add('star');
@@ -53,8 +54,14 @@ function createStars() {
     star.style.left = `${Math.random() * 100}vw`;
     
     // Randomize the speed of each star's movement
-    const animationDuration = Math.random() * 5 + 5; // Speed between 5s and 10s
-    star.style.animationDuration = `${animationDuration}s`;
+    const animationType = Math.random() > 0.95 ? 'shooting-star' : 'twinkle'; // Randomly assign a shooting star or twinkle animation
+    star.style.animationDuration = `${Math.random() * 3 + 2}s`; // Speed between 2s and 5s
+    star.style.animationName = animationType;
+
+    // Randomize twinkle speed for a more varied effect
+    if (animationType === 'twinkle') {
+      star.style.animationDuration = `${Math.random() * 1.5 + 1.5}s`; // Twinkle between 1.5s and 3s
+    }
 
     starContainer.appendChild(star);
   }
