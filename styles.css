@@ -4,14 +4,16 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
+html, body {
+  height: 100%;
   overflow-x: hidden;
   background-color: #000; /* Dark background color */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-y: hidden;
   color: white;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
 }
 
 .logo-container {
@@ -29,24 +31,16 @@ body {
   transition: transform 1s ease-out;
 }
 
-.scroll-content {
-  height: 200vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 5;
-}
-
 .journey-text {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease;
-}
-
-.journey-text h1 {
-  font-size: 2rem;
-  text-align: center;
+  z-index: 5;
 }
 
 .video-container {
@@ -63,85 +57,6 @@ body {
 }
 
 video {
-  max-width: 80%;
-  max-height: 80%;
-}
-
-/* Stars animation */
-.stars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.star {
-  position: absolute;
-  background-color: white;
-  border-radius: 50%;
-  animation: twinkle 1.5s ease-in-out infinite;
-}
-
-@keyframes star-movement {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-  100% {
-    transform: translateY(100vh) translateX(100vw);
-  }
-}
-
-@keyframes twinkle {
-  0% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.7;
-  }
-}
-
-@keyframes shooting-star {
-  0% {
-    transform: translateY(-10vh) translateX(-10vw);
-  }
-  100% {
-    transform: translateY(110vh) translateX(110vw);
-  }
-}
-
-/* Star size adjustments */
-.star.small {
-  width: 1px;
-  height: 1px;
-}
-
-.star.medium {
-  width: 2px;
-  height: 2px;
-}
-
-.star.large {
-  width: 4px;
-  height: 4px;
-}
-
-/* Realistic constellations (example pattern for a few constellations) */
-.constellation {
-  position: absolute;
-  border: 1px solid transparent;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.constellation-line {
-  position: absolute;
-  background-color: white;
-  opacity: 0.5;
-  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
 }
