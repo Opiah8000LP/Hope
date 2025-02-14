@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage V1.1</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RgY Brand</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="logo-container">
-    <img src="New Project (51).png" alt="RgY Logo" class="logo" id="logo">
-  </div>
 
-  <div class="scroll-content">
-    <div class="journey-text">
-      <h1>The Journey Begins Here</h1>
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <img src="logo.png" alt="RgY Logo" class="logo">
     </div>
-  </div>
 
-  <div class="video-container">
-    <video id="hope-video" width="100%" controls>
-      <source src="HOPE.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+    <!-- Journey Text -->
+    <div class="journey-text">
+        <h1>The Journey Begins</h1>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- Video Modal -->
+    <div class="video-container">
+        <video id="hope-video" controls>
+            <source src="HOPE.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Logo animation: moves to top after 1.5 seconds
+        window.onload = () => {
+            setTimeout(() => {
+                document.querySelector('.logo').style.transform = 'translateY(-50vh)';
+                document.querySelector('.journey-text').style.opacity = 1;
+                document.querySelector('.journey-text').style.transform = 'translateY(0)';
+            }, 1500);
+        };
+
+        // Detect if the user types "H-O-P-E" and play the video
+        let inputSequence = '';
+        document.addEventListener('keydown', (e) => {
+            inputSequence += e.key.toUpperCase();
+            if (inputSequence.includes('H-O-P-E')) {
+                document.querySelector('.video-container').style.display = 'flex';
+                document.querySelector('#hope-video').play();
+                inputSequence = ''; // reset the sequence
+            }
+        });
+    </script>
+
 </body>
 </html>
