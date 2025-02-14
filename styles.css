@@ -82,7 +82,7 @@ video {
   height: 2px;
   background-color: white;
   border-radius: 50%;
-  animation: star-movement 10s linear infinite, twinkle 1.5s ease-in-out infinite;
+  animation: star-movement 5s linear infinite, twinkle 1.5s ease-in-out infinite;
 }
 
 @keyframes star-movement {
