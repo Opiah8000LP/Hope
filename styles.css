@@ -7,7 +7,7 @@
 body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-  background-color: #1c1c1c;
+  background-color: #000000;
   color: white;
   height: 100vh;
 }
@@ -61,6 +61,6 @@ body {
 }
 
 video {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 100%;
+  max-height: 100%;
 }
